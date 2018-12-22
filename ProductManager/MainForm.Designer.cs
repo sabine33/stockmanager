@@ -89,7 +89,6 @@ namespace ProductManager
 			this.lblProductStock.Size = new System.Drawing.Size(100, 23);
 			this.lblProductStock.TabIndex = 4;
 			this.lblProductStock.Text = "Total Stock :";
-			this.lblProductStock.Visible = false;
 			// 
 			// txtOpeningStock
 			// 
@@ -99,7 +98,6 @@ namespace ProductManager
 			this.txtOpeningStock.Name = "txtOpeningStock";
 			this.txtOpeningStock.Size = new System.Drawing.Size(150, 22);
 			this.txtOpeningStock.TabIndex = 3;
-			this.txtOpeningStock.Visible = false;
 			// 
 			// cmbProductList
 			// 
