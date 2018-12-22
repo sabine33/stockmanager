@@ -1,0 +1,8 @@
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\obj\Debug\ProductManager.csprojResolveAssemblyReference.cache
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\obj\Debug\ProductManager.MainForm.resources
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\obj\Debug\ProductManager.csproj.GenerateResource.Cache
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\bin\Debug\ProductManager.exe.config
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\bin\Debug\ProductManager.exe
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\bin\Debug\ProductManager.pdb
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\obj\Debug\ProductManager.exe
+C:\Users\HP\Documents\SharpDevelop Projects\ProductManager\ProductManager\obj\Debug\ProductManager.pdb
