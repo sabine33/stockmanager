@@ -50,6 +50,10 @@ namespace ProductManager.Managers
 		{
 			DBManager.Insert(product);
 		}
+		public bool ValidateForDecrement(Product product,int quantity)
+		{
+		return product.Stock>=quantity;	
+		}
 		
 	
 	}

@@ -91,22 +91,51 @@ namespace ProductManager
 				int qty=0;
 				int.TryParse(txtQty.Text,out qty);
 				string action=cmbActionList.SelectedItem.ToString();
+				bool isSuccess=false;
 				switch(action)
 				{
 					case "Sale":
-						_stockManager.Sale(product,qty);
+						if(_stockManager.ValidateForDecrement(product,qty))
+						{
+							_stockManager.Sale(product,qty);
+							isSuccess=true;
+						}
+						else
+						{
+							isSuccess=false;
+							MessageBox.Show("Please enter valid quantity");
+						}
 						break;
 					case "Purchase":
 						_stockManager.Purchase(product,qty);
+						isSuccess=true;
 						break;
 					case "Sales Return":
 						_stockManager.SalesReturn(product,qty);
+						isSuccess=true;
 						break;
 					case "Purchase Return":
-						_stockManager.PurchaseReturn(product,qty);
+						if(_stockManager.ValidateForDecrement(product,qty))
+						{
+							_stockManager.PurchaseReturn(product,qty);
+							isSuccess=true;
+						}
+						else
+						{
+							isSuccess=false;
+							MessageBox.Show("Please enter valid quantity");
+							
+						}
 						break;
 				}
-				MessageBox.Show("Successfully Done");
+				if(isSuccess)
+				{
+					MessageBox.Show("Successfully Done");
+				}
+				else
+				{
+					MessageBox.Show("Unable to apply action");
+				}
 				LoadData();
 				
 			}

@@ -25,5 +25,6 @@ namespace ProductManager.Interfaces
 		void SalesReturn(Product product, int quantity);
 		List<Product> GetAllProducts();
 		void AddProduct(Product product);
+		bool ValidateForDecrement(Product product,int quantity);
 	}
 }
