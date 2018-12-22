@@ -27,6 +27,8 @@ namespace ProductManager.Managers
 		
 		public void Sale(Product product, int quantity)
 		{
+			
+				
 			DBManager.Update(product,quantity,Actions.Sale);
 		}
 		
