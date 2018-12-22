@@ -14,6 +14,9 @@ namespace ProductManager.Interfaces
 	/// <summary>
 	/// Description of IProductManager.
 	/// </summary>
+	/// 
+	
+	//interface to manage all stock related operations
 	public interface IStockManager
 	{
 		void Purchase(Product product, int quantity);

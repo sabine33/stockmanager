@@ -18,8 +18,7 @@ namespace ProductManager.Managers
 	/// </summary>
 	public class StockManager:IStockManager
 	{
-		
-		
+		//self explanatory actions
 		public void Purchase(Product product, int quantity)
 		{
 			DBManager.Update(product,quantity,Actions.Purchase);

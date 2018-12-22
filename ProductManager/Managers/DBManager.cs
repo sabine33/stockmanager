@@ -21,6 +21,7 @@ namespace ProductManager.Managers
 	public class DBManager
 	{
 		
+		//update query
 		public static void Update(Product product,int qty,Actions action)
 		{
 			using (SqlConnection con = new SqlConnection(
@@ -57,6 +58,8 @@ namespace ProductManager.Managers
 				}
 			}
 		}
+		
+		//insert query
 		public  static void Insert(Product product)
 		{
 			using (SqlConnection con = new SqlConnection(
@@ -80,6 +83,8 @@ namespace ProductManager.Managers
 			}
 		}
 		
+		//read
+		
 		public static List<Product> GetAllProducts()
 		{
 			List<Product> products = new List<Product>();
@@ -99,7 +104,7 @@ namespace ProductManager.Managers
 						Debug.WriteLine(product.ToString());
 						products.Add(product);
 					}
-						
+					
 				}
 				
 			}

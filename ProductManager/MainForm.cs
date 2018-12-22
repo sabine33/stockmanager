@@ -35,6 +35,8 @@ namespace ProductManager
 		
 		void LoadData()
 		{
+			//load data from database to list
+			
 			List<Product> _allProducts=_stockManager.GetAllProducts();
 			lstProductList.DataSource=_allProducts;
 			cmbProductList.DataSource=_allProducts;
@@ -52,12 +54,17 @@ namespace ProductManager
 		{
 			LoadData();
 			
+			//on product selected
+			
 			lstProductList.SelectedValueChanged+=delegate{
 				Product product=lstProductList.SelectedItem as Product;
 				txtOpeningStock.Text=(product.Stock).ToString();
 				txtQty.Text=product.Stock.ToString();
 				txtProductName.Text=product.Name;
 			};
+			
+			//on add button clicked
+			
 			btnAdd.Click+=delegate {
 				string productName=txtProductName.Text.Trim().ToUpper();
 				int totalStock=0;
@@ -76,6 +83,7 @@ namespace ProductManager
 		
 		void BtnApplyClick(object sender, EventArgs e)
 		{
+			//on apply button clicked
 			try
 			{
 				Product product=cmbProductList.SelectedItem as Product;
@@ -97,7 +105,6 @@ namespace ProductManager
 					case "Purchase Return":
 						_stockManager.PurchaseReturn(product,qty);
 						break;
-						
 				}
 				MessageBox.Show("Successfully Done");
 				LoadData();

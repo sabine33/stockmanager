@@ -13,15 +13,18 @@ namespace ProductManager.Managers
 	/// <summary>
 	/// Description of Helpers.
 	/// </summary>
+	/// 
+	//helpers with satatic props
 	public static class Helpers
 	{
 		
 		public static string connectionString="Server=ANSSOFT;Database=products_db;User Id=sa;Password=123;";
-	
+		
 	}
+	//possible Actions
 	public enum Actions
-		{
-			Sale,Purchase,SalesReturn,PurchaseReturn
-				
-		}
+	{
+		Sale,Purchase,SalesReturn,PurchaseReturn
+			
+	}
 }
