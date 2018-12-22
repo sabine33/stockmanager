@@ -23,12 +23,12 @@ namespace ProductManager
 	{
 		StockManager _stockManager;
 
+		List<Product> _allProducts;
 		public MainForm()
 		{
 			
 			InitializeComponent();
 			_stockManager=new StockManager();
-			
 			
 			
 		}
@@ -37,7 +37,7 @@ namespace ProductManager
 		{
 			//load data from database to list
 			
-			List<Product> _allProducts=_stockManager.GetAllProducts();
+			_allProducts=_stockManager.GetAllProducts();
 			lstProductList.DataSource=_allProducts;
 			cmbProductList.DataSource=_allProducts;
 			cmbActionList.Items.Clear();
@@ -49,6 +49,12 @@ namespace ProductManager
 			cmbProductList.DisplayMember="name";
 			cmbProductList.ValueMember="name";
 		}
+		void LazyLoadData(Product product)
+		{
+			Product _updated=_stockManager.GetProduct(product.Id);
+			_allProducts[_allProducts.IndexOf(product)]=_updated;
+		}
+		
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
@@ -102,8 +108,9 @@ namespace ProductManager
 						}
 						else
 						{
-							isSuccess=false;
+							
 							MessageBox.Show("Please enter valid quantity");
+							isSuccess=false;
 						}
 						break;
 					case "Purchase":
@@ -122,8 +129,9 @@ namespace ProductManager
 						}
 						else
 						{
-							isSuccess=false;
+							
 							MessageBox.Show("Please enter valid quantity");
+							isSuccess=false;
 							
 						}
 						break;
